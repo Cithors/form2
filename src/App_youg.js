@@ -1,17 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Form from './Form';
-import Agenda from './calendrier2';
-import User from './api';
-import Pastries from './api3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div>
-       <Router>
+
+import Form from './Form';
+import User from './api';
+import Score from './api2';
+import Pastries from './api3';
+import Agenda from './calendrier2';
+
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to={'/'} className="navbar-brand">React CRUD Example</Link>
@@ -22,6 +23,9 @@ function App() {
                 </li>
                 <li className="nav-item">
                   <Link to={'/user'} className="nav-link">Utilisateurs</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={'/score'} className="nav-link">Score</Link>
                 </li>
                 <li className="nav-item">
                   <Link to={'/pastries'} className="nav-link">Viennoiseries</Link>
@@ -35,16 +39,20 @@ function App() {
               </ul>
             </div>
           </nav> <br/>
-        </div>
-        <Switch>
+          <div>
+            <Agenda />
+          </div>
+          <Switch>
               <Route exact path='/user' component={ User } />
+              <Route path='/score' component={ Score } /> 
               <Route path='/pastries' component={ Pastries } />
               <Route path='/calendrier' component={ Agenda } />
               <Route path='/formulaire' component={ Form } />
           </Switch>
+        </div>
       </Router>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

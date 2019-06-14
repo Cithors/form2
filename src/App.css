@@ -1,3 +1,6 @@
+@import '~react-agenda/build/styles.css';
+@import '~react-datetime/css/react-datetime.css';
+  
 .App {
   text-align: center;
 }
@@ -21,6 +24,18 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.size{
+  width: 1080px;
+  float: left;
+  margin: auto;
+}
+
+.score{
+  width: 260px;
+  float: right;
+  margin: auto;
 }
 
 @keyframes App-logo-spin {
