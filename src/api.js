@@ -16,6 +16,7 @@ export default class User extends React.Component {
   }
 
   render() {
+    const { users } = this.state;
     return (
       <div>
         <table class="table">
@@ -25,7 +26,7 @@ export default class User extends React.Component {
             <td>Date et heure de départ</td>
             <td>Date et heure de fin</td>
           </tr>
-        { this.state.users.map((user, index) => <tr align="center"><td key={index}>{user.nom}</td><td>{user.prenom}</td><td>{user.date.date}</td><td>{user.end.date}</td></tr>)}
+        { users.map((user, index) => <tr align="center"><td key={index}>{user.nom}</td><td>{user.prenom}</td><td>{user.date.date}</td><td>{user.end.date}</td></tr>)}
         </table>
       </div>
     )
