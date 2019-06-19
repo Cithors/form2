@@ -2,13 +2,15 @@ import React from 'react';
 import { ReactAgenda , ReactAgendaCtrl , guid ,  Modal } from 'react-agenda';
 import axios from 'axios';
 import Score from './api2';
+import Score_undone from './api4.js';
+import Popup from './popup';
 
 require('moment/locale/fr.js'); // this is important for traduction purpose
  
 var colors= {
   'color-1':"red" ,
-  "color-2":"grey" ,
-  "color-3":"grey"
+  "color-2":"yellow" ,
+  "color-3":"red"
 }
  
 var now = new Date();
@@ -84,6 +86,14 @@ handleRangeSelection(item){
       </div>
       <div className="score">
         <Score />
+      </div>
+      <br/><br/>
+      <div className="score">
+        <Score_undone />
+      </div>
+      <br/><br/>
+      <div className="form">
+        <Popup />
       </div>
       </div>
     );

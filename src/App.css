@@ -34,8 +34,13 @@
 
 .score{
   width: 260px;
+  text-align: center;
   float: right;
   margin: auto;
+}
+
+.form{
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
